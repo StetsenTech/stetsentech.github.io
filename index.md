@@ -4,4 +4,5 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 paginate: true
+image: /assets/img/banner.jpg
 ---
