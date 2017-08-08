@@ -8,9 +8,7 @@ categories: python marshmallow data serialization
 
 ## What is Serialization
 
-Serialization is the process of converting an instance of an object into a data that can be stored in memory and/or a database. That data can then be use to recreate the object at another time as needed. The process isn't always an one to one translation, but it is close enough to represent the original state of the information.
-
-When reversing the process of serialization, it is called deserialization. You use stored data to reproduce an object so that it may be used again.
+Serialization is the process of converting an instance of an object into a data that can be stored in memory and/or a database. The act of serializing an object is called marshalling. That data can then be use to recreate the object as needed. When reversing serialization, it is called deserialization which means you use the stored data to reproduce an object so that it may be used again. And as before, the act of deserializing an object is called unmarshalling. The process isn't always direct translation, but it is close enough to represent the original state of the information.
 
 ## What is Marshmallow
 
@@ -32,7 +30,7 @@ class EmployeeSchema(Schema):
 
 The above schema can be used to make sure that a data passed through it has the fields `first_name`, `last_name`, `job_title`, and `company` which are all strings; all of which are strings. This ensures that if a company has a name like "123", it doesn't get used as an integer. `first_name`, `last_name`, and `company` are all required 
 
-## Why use Marshmallow?
+## Why use Marshmallow
 
 ### User Defined Data Manipulation
 
@@ -51,11 +49,10 @@ Figure 3.1.1
 ```json
 {
    "firstName": "Brian",
-   "LastName": "Rose",
-   "jobTitle": "Junior Engineer",
-   "company": "Croscon"
+   "lastName": "Rose",
+   "jobTitle": "Engineer",
+   "company": "Company"
 }
-
 ```
 
 While there isn't anything wrong with the syntax, someone who uses Python might not like the fact that the variable names are camel cased and prefer snake case similar to the schema provided in Figure 1.1.1.
@@ -75,3 +72,5 @@ class EmployeeSchema(Schema):
     job_title = fields.String(attribute='jobTitle')
     company = fields.String(required=True)
 ```
+
+If you want to see how this runs, check out [this repo](https://github.com/StetsenTech/blog-example-marshmallow).
