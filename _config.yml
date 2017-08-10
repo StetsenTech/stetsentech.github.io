@@ -29,7 +29,7 @@ linkedin_username: briansrose
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-basically-basic
+theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
   - jekyll-paginate
